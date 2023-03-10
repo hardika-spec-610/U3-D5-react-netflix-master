@@ -19,7 +19,7 @@ class Gallery1 extends Component {
     try {
       const apiUrl = process.env.REACT_APP_BE_URL;
       let response = await fetch(
-        `${apiUrl}/medias?title=${encodeURIComponent(this.props.query)}`
+        `${apiUrl}/medias?title=${encodeURIComponent(this.props.name)}`
       );
       console.log(response);
       if (response.ok) {
