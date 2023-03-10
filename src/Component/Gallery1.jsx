@@ -17,16 +17,13 @@ class Gallery1 extends Component {
 
   getMovies = async () => {
     try {
-      let response = await fetch(
-        `http://www.omdbapi.com/?apikey=19510134&s=${encodeURIComponent(
-          this.props.name
-        )}`
-      );
+      const apiUrl = process.env.REACT_APP_BE_URL;
+      let response = await fetch(`${apiUrl}/medias}`);
       console.log(response);
       if (response.ok) {
         let movieData = await response.json();
         console.log("data", movieData);
-        this.setState({ movies: movieData.Search, isLoading: false });
+        this.setState({ movies: movieData, isLoading: false });
       } else {
         this.setState({ isLoading: false, isError: true });
       }
