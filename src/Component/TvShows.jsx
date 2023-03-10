@@ -37,9 +37,15 @@ const TvShows = () => {
       </Row>
 
       <Gallery1 />
-      <Gallery1 name="harry potter" title="Harry Potter" />
-      <Gallery1 name="Lord of the Rings" title="Lord of the Rings" />
-      <Gallery1 name="Titanic" title="Titanic" />
+      <Gallery1
+        name="Harry Potter and the Sorcerer's Stone"
+        title="Harry Potter"
+      />
+      <Gallery1
+        name="The Lord of the Rings: The Fellowship of the Ring"
+        title="Lord of the Rings"
+      />
+      {/* <Gallery1 name="Titanic" title="Titanic" /> */}
       <Gallery1 name="Back to the Outback" title="Back to the Outback" />
       {/* <Gallery1 name="Squid Game" title="Squid Game" /> */}
     </>
