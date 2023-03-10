@@ -21,7 +21,7 @@ const MovieDetails = () => {
         {
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M5M2FjZGU3MzczODAwMTUzNzQzOGIiLCJpYXQiOjE2NzU3NzY5MjAsImV4cCI6MTY3Njk4NjUyMH0.iZkEz1pTQD0UwdN8qkuX43GlGjgs5ctxQ9BiOCPjau4",
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M5M2FjZGU3MzczODAwMTUzNzQzOGIiLCJpYXQiOjE2NzgzMDIzNDksImV4cCI6MTY3OTUxMTk0OX0.DEpx10NRI0NCQC4k8y6hrGJIxPGSfo0YRE2F7cwT-9Q",
           },
         }
       );
@@ -45,9 +45,8 @@ const MovieDetails = () => {
 
   const getMovieDetails = async () => {
     try {
-      let response = await fetch(
-        `http://www.omdbapi.com/?apikey=19510134&i=${params.movieId}`
-      );
+      const apiUrl = process.env.REACT_APP_BE_URL;
+      let response = await fetch(`${apiUrl}/medias/${params.imdbID}}`);
       if (response.ok) {
         let movieDetails = await response.json();
         console.log("movieData2", movieDetails);
