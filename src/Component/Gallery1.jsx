@@ -18,7 +18,7 @@ class Gallery1 extends Component {
   getMovies = async () => {
     try {
       const apiUrl = process.env.REACT_APP_BE_URL;
-      let response = await fetch(`${apiUrl}/medias}`);
+      let response = await fetch(`${apiUrl}/medias`);
       console.log(response);
       if (response.ok) {
         let movieData = await response.json();
