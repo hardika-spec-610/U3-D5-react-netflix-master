@@ -32,6 +32,15 @@ const CarouselItem = ({ id, poster, title, movieType, movieYear, movieId }) => {
               More Details
             </Button>
           </Link>
+          <span>
+            For more info{" "}
+            <a
+              onClick={(e) => e.stopPropagation()}
+              href={`${process.env.REACT_APP_BE_URL}/medias/${movieId}/pdf`}
+            >
+              download PDF
+            </a>
+          </span>
         </div>
       </div>
     </Col>
