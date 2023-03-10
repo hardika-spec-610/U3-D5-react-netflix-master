@@ -36,9 +36,13 @@ const TvShows = () => {
         </Col>
       </Row>
 
-      <Gallery1 />
+      {/* <Gallery1 /> */}
       <Gallery1
         name="Harry Potter and the Sorcerer's Stone"
+        title="Harry Potter"
+      />
+      <Gallery1
+        name="Harry Potter and the Prisoner of Azkaban"
         title="Harry Potter"
       />
       <Gallery1
