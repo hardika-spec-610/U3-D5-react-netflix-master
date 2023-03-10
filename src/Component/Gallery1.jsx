@@ -18,7 +18,9 @@ class Gallery1 extends Component {
   getMovies = async () => {
     try {
       const apiUrl = process.env.REACT_APP_BE_URL;
-      let response = await fetch(`${apiUrl}/medias`);
+      let response = await fetch(
+        `${apiUrl}/medias?title=${encodeURIComponent(this.props.query)}`
+      );
       console.log(response);
       if (response.ok) {
         let movieData = await response.json();
@@ -36,7 +38,7 @@ class Gallery1 extends Component {
   render() {
     return (
       <div className="mt-5">
-        {/* <h5 className="text-left">{this.props.title}</h5> */}
+        <h5 className="text-left">{this.props.title}</h5>
         <Row className="mb-4">
           {this.state.isError && (
             <Alert variant="danger">Aww snap, we got an error!😨</Alert>
