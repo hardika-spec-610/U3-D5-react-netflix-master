@@ -32,7 +32,8 @@ const CarouselItem = ({ id, poster, title, movieType, movieYear, movieId }) => {
               More Details
             </Button>
           </Link>
-          <span>
+          <span className="d-block">{movieId}</span>
+          <span className="d-block">
             For more info{" "}
             <a
               onClick={(e) => e.stopPropagation()}
