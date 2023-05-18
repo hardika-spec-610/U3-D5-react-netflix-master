@@ -12,6 +12,7 @@ const MovieDetails = () => {
   const [isError, setIsError] = useState(false);
   const params = useParams();
   console.log("PARAMS ARE: ", params);
+  // console.log("PARAMS ARE: ", params.imdbID);
   console.log("the id of the chosen movie is", params.movieId);
 
   const movieInfoComments = async () => {
@@ -21,7 +22,7 @@ const MovieDetails = () => {
         {
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M5M2FjZGU3MzczODAwMTUzNzQzOGIiLCJpYXQiOjE2NzgzMDIzNDksImV4cCI6MTY3OTUxMTk0OX0.DEpx10NRI0NCQC4k8y6hrGJIxPGSfo0YRE2F7cwT-9Q",
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M5M2FjZGU3MzczODAwMTUzNzQzOGIiLCJpYXQiOjE2ODQ0NDM0NTksImV4cCI6MTY4NTY1MzA1OX0.UAVAdmMW56CUC-ax05ttsif4VS21icBaUVSa-SedQA8",
           },
         }
       );
@@ -46,7 +47,7 @@ const MovieDetails = () => {
   const getMovieDetails = async () => {
     try {
       const apiUrl = process.env.REACT_APP_BE_URL;
-      let response = await fetch(`${apiUrl}/medias/${params.imdbID}}`);
+      let response = await fetch(`${apiUrl}/medias/${params.movieId}`);
       if (response.ok) {
         let movieDetails = await response.json();
         console.log("movieData2", movieDetails);

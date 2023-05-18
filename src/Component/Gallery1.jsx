@@ -26,7 +26,7 @@ class Gallery1 extends Component {
       if (response.ok) {
         let movieData = await response.json();
         console.log("data", movieData);
-        this.setState({ ...this.state, movies: movieData, isLoading: false });
+        this.setState({ movies: movieData, isLoading: false });
       } else {
         this.setState({ isLoading: false, isError: true });
       }
