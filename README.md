@@ -2,7 +2,7 @@
 
 ## Backend
 
-Open [https://github.com/hardika-spec-610/netflix-backend](Backend Repository) to view it in your browser.
+Open [https://github.com/hardika-spec-610/netflix-backend] (Backend Repository) to view it in your browser.
 
 ## Images
 
